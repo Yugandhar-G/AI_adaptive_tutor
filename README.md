@@ -81,10 +81,17 @@ An intelligent, AI-powered adaptive learning platform that personalizes educatio
 
 3. **Set up OpenAI API Key**
    
-   The API key is currently configured in the code. For production, use environment variables:
+   Set your OpenAI API key as an environment variable:
    ```bash
    export OPENAI_API_KEY="your-api-key-here"
    ```
+   
+   Or create a `.env` file in the project root:
+   ```
+   OPENAI_API_KEY=your-api-key-here
+   ```
+   
+   **Important**: Never commit your API key to the repository. Get your API key from [OpenAI Platform](https://platform.openai.com/api-keys).
 
 4. **Verify Knowledge Graph**
    
