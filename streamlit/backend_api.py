@@ -14,7 +14,6 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import uvicorn
 import pickle
-import os
 import random
 import networkx as nx
 import json

@@ -20,6 +20,7 @@ import time
 import numpy as np
 from typing import Dict, List, Tuple, Optional
 from openai import OpenAI
+import os
 
 # Initialize OpenAI client
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY", ""))

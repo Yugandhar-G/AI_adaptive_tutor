@@ -34,7 +34,7 @@ from tqdm import tqdm
 # If your class name is different (e.g., TransformerDKTModel), adjust the import.
 from transformer_dkt_model import TransformerDKT  # noqa: F401 (referenced later as optional)
 
-# Initialize OpenAI client with API key (not recommended for production use)
+# Initialize OpenAI client with API key from environment variable
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY", ""))
 
 # Torch device

@@ -2,6 +2,7 @@ import streamlit as st
 import requests
 from openai import OpenAI
 import json
+import os
 from datetime import datetime
 from typing import Dict
 import plotly.express as px
