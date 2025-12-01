@@ -18,25 +18,7 @@ An intelligent, AI-powered adaptive learning platform that personalizes educatio
 - **Performance Metrics**: Accuracy tracking and learning analytics
 - **Concept Mapping**: Displays concept names instead of IDs for better understanding
 
-## 🏗️ Architecture
 
-```
-┌─────────────────┐
-│  Streamlit UI   │  ← User Interface
-└────────┬────────┘
-         │
-┌────────▼────────┐
-│  FastAPI       │  ← Backend API Server
-│  Backend       │
-└────────┬────────┘
-         │
-    ┌────┴────┐
-    │         │
-┌───▼───┐ ┌──▼──────────┐
-│  KG   │ │   OpenAI    │
-│ Graph │ │   GPT-3.5   │
-└───────┘ └─────────────┘
-```
 
 ### Components
 
