@@ -1,0 +1,54 @@
+# Production docker-compose configuration
+# Usage: docker-compose -f docker-compose.prod.yml up -d
+
+services:
+  backend:
+    build: .
+    container_name: adaptive-learning-backend-prod
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - PYTHONUNBUFFERED=1
+    # No volume mounts in production - code is baked into image
+    command: python streamlit/backend_api.py
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/topics"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: '2'
+        reservations:
+          memory: 2G
+          cpus: '1'
+
+  frontend:
+    build: .
+    container_name: adaptive-learning-frontend-prod
+    ports:
+      - "8501:8501"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - API_BASE=http://backend:8000
+      - PYTHONUNBUFFERED=1
+    # No volume mounts in production
+    command: streamlit run streamlit/app_streamlit.py --server.port=8501 --server.address=0.0.0.0 --server.headless=true
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '1'
+        reservations:
+          memory: 1G
+          cpus: '0.5'
+
