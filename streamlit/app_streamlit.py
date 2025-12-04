@@ -8,7 +8,8 @@ from typing import Dict
 import plotly.express as px
 import plotly.graph_objects as go
 
-API_BASE = "http://localhost:8000"  # FastAPI backend
+# FastAPI backend - use environment variable for Docker, fallback to localhost
+API_BASE = os.getenv("API_BASE", "http://localhost:8000")
 
 # Page configuration
 st.set_page_config(

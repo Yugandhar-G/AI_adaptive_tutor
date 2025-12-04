@@ -163,6 +163,40 @@ An intelligent, AI-powered adaptive learning platform that personalizes educatio
    ```
    The application will open in your browser at `http://localhost:8501`
 
+### 🐳 Docker Deployment (Recommended)
+
+For easier deployment and consistency across environments, use Docker:
+
+1. **Set up environment variables**
+   ```bash
+   cp .env.example .env
+   # Edit .env and add your OPENAI_API_KEY
+   ```
+
+2. **Quick start with script**
+   ```bash
+   ./docker-start.sh
+   ```
+
+3. **Or use docker-compose directly**
+   ```bash
+   # Build and start services
+   docker-compose up --build -d
+   
+   # View logs
+   docker-compose logs -f
+   
+   # Stop services
+   docker-compose down
+   ```
+
+4. **Access the application**
+   - Frontend: http://localhost:8501
+   - Backend API: http://localhost:8000
+   - API Docs: http://localhost:8000/docs
+
+For detailed Docker deployment instructions, see [DOCKER_DEPLOYMENT.md](DOCKER_DEPLOYMENT.md).
+
 ## 📖 Usage Guide
 
 ### For Students
