@@ -1,0 +1,79 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+*.md
+!README.md
+
+# Logs
+*.log
+logs/
+generation_log.txt
+
+# Temporary files
+*.tmp
+*.bak
+*.backup
+
+# Data files (uncomment if you want to exclude large data files)
+# *.csv
+# *.npz
+# ednet/
+# khan-exercises/
+
+# Model files (uncomment if models are too large - you'll need to mount them separately)
+# *.pt
+# *.pkl
+
+# Docker files
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Environment files
+.env
+.env.local
+
+# Test files
+test/
+tests/
+*.test.py
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Project specific
+zip_paths/
+~$*.doc
+AI*.doc
+
